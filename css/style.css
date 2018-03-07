@@ -1,0 +1,402 @@
+/*GLOBAL */
+
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+html {
+	font-size: 100%;
+}
+
+
+body {
+  font-family: 'Scheherazade', serif;
+	font-size: 1.8rem;
+	margin: 0;
+	color: #eee;
+	background-color: #579951;
+}
+
+
+h1 {
+	font-family: 'Aclonica', sans-serif;
+	font-weight: normal;
+	color: white;
+	text-align: center;
+	font-size: 4rem;
+}
+
+h1 span {
+	font-family: 'Scheherazade', serif;
+	font-size: 1.8rem;
+	color : #88bdb4;
+	font-style: italic;
+}
+
+
+h2 {
+	font-family: 'Aclonica', sans-serif;
+	font-weight: normal;
+	color: #fffb05;
+	font-size: 2.7rem;
+	padding-bottom: 15px;
+	text-align: justify;
+}
+
+h2 span {
+	font-style: italic;
+	font-size: smaller;
+}
+
+h3 {
+	font-family: 'Aclonica', sans-serif;
+	font-weight: normal;
+	color: #fffb05;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	font-style: italic;
+	color: #7cf1dc;
+	cursor: url("../img/icon3.png"), pointer;
+}
+
+a:hover {
+	color : red;
+}
+
+/* en-tête et pied de page */
+header {
+	padding: 30px;
+	background-image: url(../img/ladybug1.jpeg);
+	background-position: center;
+	background-size: cover;
+}
+
+header h1 {
+	text-align: right;
+  text-shadow: 1px 1px 0 #f32f39, 2px 2px 0 #f32f39, 3px 3px 0 #f22b34, 4px 4px 0 #f22b34;
+}
+
+header a {
+	font-style: normal;
+	color : yellow;
+	cursor:pointer;
+}
+
+header a:hover {
+	color:#579951;
+}
+
+nav {
+	width : 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items:center;
+	flex-wrap: wrap;
+}
+
+.buttonNav {
+  border : 1px solid black;
+  border-radius: 10px;
+  padding : 0 10px;
+  text-align: center;
+  margin: 0 15px;
+  background-color: rgba(207, 13, 3, 0.8)  ;
+	min-width: 160px;
+}
+
+footer {
+	margin : 15px;
+	font-size: smaller;
+	color : #9eaec5;
+	text-align: center;
+}
+
+footer a {
+	color : #bcd6fb;
+}
+
+
+/* personnalisation contenu */
+
+.container {
+	width : 70%;
+	margin : 0 auto;
+}
+
+/* page experience, gestion des "cartes" */
+
+.cadreFlip {
+	display : flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.flip3D{
+	width:240px;
+	height:200px;
+	margin:10px;
+	float:left;
+	cursor: url("../img/icon3.png"), pointer;
+}
+
+.flip3D > .front{
+	position:absolute;
+	-webkit-transform: perspective( 600px ) rotateY( 0deg );
+	transform: perspective( 600px ) rotateY( 0deg );
+	background:#fff;
+	width:240px;
+	height:200px;
+	border-radius: 7px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	padding: 3px;
+	text-align: center;
+}
+
+.flip3D > .back{
+	position:absolute;
+	-webkit-transform: perspective( 600px ) rotateY( 180deg );
+	transform: perspective( 600px ) rotateY( 180deg );
+	background: #88bc9a;
+	color : #113000;
+	width:240px;
+	height:200px;
+	border-radius: 7px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	text-align: center;
+	vertical-align: middle;
+	padding : 3px;
+}
+
+.front img {
+	height: 99%;
+	width: 99%;
+}
+
+.enumFlip {
+	list-style: none;
+	margin : 0;
+	padding : 0;
+	height: 100%;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* page contact, formulaire */
+
+
+.buttonForm {
+	border-width: 3px;
+	border-style: outset;
+	border-color: lightgray;
+	padding : 7px;
+	background-color: #113000;
+	color: antiquewhite;
+	font-family: cursive;
+	width : fit-content!important;
+	margin : 10px 35px;
+	cursor: url("../img/icon3.png"), pointer;
+}
+
+.prefForm {
+	margin-bottom: 30px;
+	background-color: #88bc9a;
+	padding: 20px;
+}
+
+.prefForm legend {
+	color : antiquewhite;
+}
+
+.prefForm label {
+	width: 240px;
+	text-align:left;
+	display: inline-block;
+  vertical-align: top;
+	color : #113000;
+	}
+
+.prefForm input[type="text"], .prefForm input[type="email"], .prefForm textarea {
+	width: 70%;
+	background-color: #e1e9ef;
+}
+
+.prefForm ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.prefForm li {
+	margin: 8px 0;
+}
+
+.placeButton {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.alerteErreur {
+	background-color: orange;
+	color : #555;
+	font-weight: bold;
+	margin : 2px auto;
+	text-align: center;
+	width: fit-content;
+	padding: 1px 20px;
+}
+
+.alerteOK {
+	background-color: #74f1bc;
+	color: #555;
+	font-weight: bold;
+	margin: 2px auto;
+	text-align: center;
+	width: fit-content;
+	padding: 1px 20px;
+}
+
+/* page portfolio */
+
+
+.flex-caption {
+	color : #6ad2bf;
+	font-style: italic;
+	text-align: center;
+	width: 94%;
+	vertical-align: middle;
+}
+
+.flex-caption span {
+	font-weight: bold;
+}
+
+.enumReal {
+	list-style-image: url("../img/icon3.png");
+}
+
+.enumReal li {
+	padding-left: 2rem;
+}
+
+.avertissement {
+	color : #7cf1dc;
+	font-style: italic;
+}
+
+.presDescr {
+	font-style: italic;
+	text-align: justify;
+}
+
+.sousTitre {
+	text-align: center;
+	margin: 5px auto;
+}
+
+.hide {
+	display: none;
+}
+
+
+/*=============================================================================================================*/
+/* gestion responsive */
+
+
+/*=============================================================================================================*/
+@media only screen and (max-width : 767px) {
+/* contenu mobile */
+/* on redéfinit pour chaque balise concernée les nouveaux comportements */
+
+.container {
+    width: 90%;
+}
+
+.buttonNav {
+	margin : 5px 0;
+	padding: 0;
+}
+
+/* page contact */
+
+.prefForm li{
+	text-align: center;
+}
+
+.prefForm label {
+	width: 100%;
+}
+
+.prefForm input[type="text"], .prefForm input[type="email"], .prefForm textarea {
+	width: 90%;
+}
+
+
+/* page portfolio */
+
+h2 {
+	text-align: center;
+}
+
+h2::before {
+	content:url("../img/icon4.png");
+}
+
+.enumReal {
+	margin : 0;
+	padding : 0;
+	display: flex;
+	flex-direction: column;
+	list-style : none;
+}
+
+.enumReal li {
+	padding-left: 0;
+}
+
+.flex-caption {
+    text-align: center;
+}
+
+}
+
+/*=============================================================================================================*/
+@media screen and (min-width : 767px) and (max-width : 1024px){
+
+/* contenu tablette */
+/* on redéfinit pour chaque balise concernée les nouveaux comportements */
+
+.container {
+    width: 90%;
+}
+
+/* page contact */
+
+.prefForm li{
+	text-align: center;
+}
+
+.prefForm label {
+	width: 100%;
+}
+
+.prefForm input[type="text"], .prefForm input[type="email"], .prefForm textarea {
+	width: 90%;
+}
+
+
+}

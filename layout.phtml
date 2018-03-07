@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- fonts google -->
+  <link href="https://fonts.googleapis.com/css?family=Aclonica|Scheherazade" rel="stylesheet">
+  <!-- Appel CSS -->
+  <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Portfolio Sylvie Fabulet</title>
+  <!-- Librairie jQuery -->
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- gestion slider -->
+  <script src="js/jquery.flexslider.js"></script>
+  <link rel="stylesheet" href="css/flexslider.css" type="text/css">
+  <script>
+    $(window).load(function() {
+      $('.flexslider').flexslider({
+        slideshowSpeed: 4500,
+        animation: "fade",
+        pauseOnHover : true, /* pour laisser le temps de lire, il suffit de passer au-dessus de la diapo pour passer en pause */
+        directionNav: true,
+        keyboard : true,
+        /* et pour masquer les points sous le slider qui ppermettent de sauter directement à une page (trop laid) */
+        controlNav : false,
+        /*smoothHeight : true,  test de modification dynamique de hauteur de diapo, mais peu pratique */
+      });
+    });
+  </script>
+
+</head>
+<body>
+  <header>
+    <h1>Sylvie Fabulet</h1>
+    <nav>
+      <p class="buttonNav"><a href="portfolio.php">Portfolio</a></p>
+      <p class="buttonNav"><a href="index.php">Expérience</a></p>
+      <p class="buttonNav"><a href="contact.php">Contact</a></p>
+    </nav>
+  </header>
+  <!-- utilisation du contenu spécifique à la page envoyé par le php -->
+  <?php include $template . ".phtml" ?>
+
+  <footer>
+    <p>Conception et réalisation : <a href="contact.php">Sylvie FABULET</a></p>
+  </footer>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
