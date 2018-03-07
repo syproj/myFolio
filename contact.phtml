@@ -1,0 +1,49 @@
+<main>
+  <div class="container">
+
+    <h1>Pour m'envoyer un message</h1>
+
+    <!-- zone pour afficher un message d'erreur ou d'info suite à envoi -->
+    <?php if( ! empty($message)): ?>
+      <?php if ($isMessErreur): ?>
+        <div  class="alerteErreur"> <?= $message ?></div>
+      <?php else: ?>
+        <div  class="alerteOK"> <?= $message ?></div>
+      <?php endif ?>
+    <?php endif ?>
+
+    <!-- formulaire lui-même -->
+    <form class="prefForm" action="contact.php" method="POST">
+
+      <fieldset>
+        <legend><i class="fa fa-envelope-o" aria-hidden="true"></i> Identité et message</legend>
+        <ul>
+          <li>
+            <label for="auteurMess">Nom, prénom (*) :</label>
+            <input id="auteurMess" type="text" name="auteurMess" maxlength="100"  value ="<?= $emetteurName ?>"   required>
+          </li>
+          <li>
+            <label for="emailMess" title="Pour que je puisse vous répondre ">E-mail (*) :</label>
+            <input id="emailMess" type="email" name="emailMess" maxlength="100"  value ="<?= $emetteurMail ?>"  required>
+          </li>
+          <li>
+            <label for="titreMess">Titre (*) :</label>
+            <input id="titreMess" type="text" name="titreMess" maxlength="100"  value ="<?= $mailTitre ?>"  required>
+          </li>
+          <li>
+            <label for="contenuMess">Votre message (*) :</label>
+            <textarea name="contenuMess" id="contenuMess" rows="10"    required><?= $mailContent ?></textarea>
+          </li>
+        </ul>
+        <ul class="placeButton">
+          <li>
+            <input class="buttonForm" type="submit" value="Envoyer">
+            <a  href="index.php"><button type="button" class="buttonForm">Annuler</button></a>
+          </li>
+        </ul>
+      </fieldset>
+
+    </form>
+
+  </div>
+</main>

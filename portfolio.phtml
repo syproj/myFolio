@@ -1,0 +1,41 @@
+<main>
+  <h1>Mes réalisations</h1>
+
+  <!-- pour lister les différentes réalisations et montrer un diaporama de copies écran pour chacune, basé sur un tableau de projets qui contient lui-même un tableau d'images par projet -->
+  <!-- s'il n'y a aucun projet, on n'a pas à afficher le choix montrer/masquer le diaporama -->
+  <?php if (!empty($listProj)) : ?>
+    <p id="showHideDiapo" class="sousTitre"><a href="#" ><i class="fa fa-filter" aria-hidden="true"></i>Masquer les copies d'écran</a></p>
+  <?php endif ?>
+
+  <div class="container">
+    <ul class="enumReal">
+      <?php foreach ($listProj as $unProj) : ?>
+        <li>
+          <h2><?= $unProj['proj_name'] ?> <br><span>(<?= $unProj['proj_date_aff'] ?>)</span></h2>
+          <?php if (!empty($unProj['proj_url'])) : ?>
+            <p><a href="<?= $unProj['proj_url'] ?>" target="_blank"  ><?= $unProj['proj_url'] ?></a></p>
+          <?php else : ?>
+            <p class="avertissement">(Non en ligne)</p>
+          <?php endif ?>
+          <p class="presDescr"><?= nl2br($unProj['proj_description']) ?></p>
+          <div class="flexslider">
+            <ul class="slides">
+              <!-- sécurité = limitation du nombre d'images à afficher à 40 pour le cas où la base en contient trop -->
+              <?php foreach ($unProj['images']  as  $i => $uneImage) :?>
+                <?php if ($i < 40) : ?>
+                  <li>
+                    <img src="<?= $uneImage['image_filename'] ?>" alt="<?= $uneImage['image_alt'] ?>">
+                    <p class="flex-caption"><span>(<?= $uneImage['image_number_in_proj'] ?>) </span><?= $uneImage['image_description'] ?></p>
+                  </li>
+                <?php endif ?>
+              <?php endforeach ?>
+            </ul>
+          </div>
+
+        </li>
+      <?php endforeach ?>
+    </ul>
+  </div>
+
+</main>
+<script src="js/realisations.js"></script>
