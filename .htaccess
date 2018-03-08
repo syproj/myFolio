@@ -1,3 +1,7 @@
-<IfDefine Free>
-php 1
-</IfDefine>
+#Hide php extention
+
+Options +MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
